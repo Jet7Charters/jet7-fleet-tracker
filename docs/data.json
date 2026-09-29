@@ -1,5 +1,5 @@
 {
- "updated": "Tue Sep 29, 5:16 PM EDT",
+ "updated": "Tue Sep 29, 6:16 PM EDT",
  "aircraft": [
   {
    "tail": "N936AM",
@@ -38,48 +38,19 @@
   {
    "tail": "N577XW",
    "icao24": "a76a8c",
-   "status": "airborne",
-   "track": [
-    [
-     33.9489,
-     -83.2579
-    ],
-    [
-     33.9489,
-     -83.2579
-    ],
-    [
-     33.9503,
-     -83.1488
-    ],
-    [
-     33.9504,
-     -83.1329
-    ],
-    [
-     33.9505,
-     -83.017
-    ],
-    [
-     33.9504,
-     -82.5491
-    ]
-   ],
-   "last_contact": 1790716596,
-   "lon": -82.554,
+   "status": "last_seen",
+   "track": [],
    "lat": 33.9504,
-   "alt_ft": 10925,
-   "on_ground": false,
-   "speed_kt": 295,
-   "heading": 90.19,
-   "origin": {
-    "code": "60GE",
-    "name": "Flying B Farm Airport",
-    "lat": 33.9437,
-    "lon": -83.2371,
-    "km": 2.0
+   "lon": -82.554,
+   "airport": {
+    "code": "US-6988",
+    "name": "New Prater Ranch Airport",
+    "lat": 33.8681,
+    "lon": -82.4608,
+    "km": 12.6
    },
-   "departed": "Tue 5:08 PM"
+   "seen": "Tue 5:16 PM",
+   "was_airborne": true
   },
   {
    "tail": "N560PA",
