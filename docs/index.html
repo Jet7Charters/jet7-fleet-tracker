@@ -74,15 +74,15 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
-const FLEET = {"updated": "Tue Sep 29, 12:56 PM EDT", "aircraft": [{"tail": "N936AM", "icao24": "acfbff", "status": "unknown", "track": []}, {"tail": "N511AB", "icao24": "a66528", "status": "unknown", "track": []}, {"tail": "N577XW", "icao24": "a76a8c", "status": "unknown", "track": []}, {"tail": "N560PA", "icao24": "a72830", "status": "unknown", "track": []}, {"tail": "N560WV", "icao24": "a728f2", "status": "unknown", "track": []}, {"tail": "N50XY", "icao24": "a639bb", "status": "unknown", "track": []}, {"tail": "N156RE", "icao24": "a0e1f5", "status": "unknown", "track": []}]};
+const FLEET = {"updated": "Tue Sep 29, 1:01 PM EDT", "aircraft": [{"tail": "N936AM", "icao24": "acfbff", "status": "unknown", "track": []}, {"tail": "N511AB", "icao24": "a66528", "status": "unknown", "track": []}, {"tail": "N577XW", "icao24": "a76a8c", "status": "unknown", "track": []}, {"tail": "N560PA", "icao24": "a72830", "status": "unknown", "track": []}, {"tail": "N560WV", "icao24": "a728f2", "status": "unknown", "track": []}, {"tail": "N50XY", "icao24": "a639bb", "status": "unknown", "track": []}, {"tail": "N156RE", "icao24": "a0e1f5", "status": "unknown", "track": []}]};
 
 document.getElementById("updated").textContent =
   "Live ADS-B positions, updated " + FLEET.updated;
 
 const map = L.map("map", { worldCopyJump: true, zoomControl: true });
-L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 18,
-  attribution: '&copy; OpenStreetMap contributors &copy; CARTO | Positions: OpenSky Network'
+  attribution: '&copy; OpenStreetMap contributors | Positions: OpenSky Network'
 }).addTo(map);
 
 function planeIcon(heading, ground) {
