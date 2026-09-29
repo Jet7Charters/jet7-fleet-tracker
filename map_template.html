@@ -80,9 +80,9 @@ document.getElementById("updated").textContent =
   "Live ADS-B positions, updated " + FLEET.updated;
 
 const map = L.map("map", { worldCopyJump: true, zoomControl: true });
-L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 18,
-  attribution: '&copy; OpenStreetMap contributors &copy; CARTO | Positions: OpenSky Network'
+  attribution: '&copy; OpenStreetMap contributors | Positions: OpenSky Network'
 }).addTo(map);
 
 function planeIcon(heading, ground) {
