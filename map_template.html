@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="refresh" content="600">
+<title>Jet7 fleet</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✈️</text></svg>">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #2C3F54; --navy-deep: #1f2e3e; --gold: #BCA67B;
+    --paper: #fbfaf7; --ink: #22303f; --muted: #7b8591; --line: #e3ded3;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    font: 14px/1.45 Poppins, system-ui, sans-serif; color: var(--ink);
+    background: var(--paper); display: grid;
+    grid-template: "head head" auto "list map" 1fr / 300px 1fr;
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+  header {
+    grid-area: head; background: var(--navy); color: #fff;
+    display: flex; align-items: baseline; justify-content: space-between;
+    padding: 14px 20px; border-bottom: 3px solid var(--gold);
+  }
+  header h1 { font: 600 22px/1 Lora, Georgia, serif; margin: 0; letter-spacing: .01em; }
+  header h1 span { color: var(--gold); }
+  header p { margin: 0; font-size: 13px; opacity: .8; }
+  #list { grid-area: list; overflow-y: auto; border-right: 1px solid var(--line); }
+  #map { grid-area: map; }
+  .ac {
+    display: block; width: 100%; text-align: left; background: none; border: 0;
+    border-bottom: 1px solid var(--line); padding: 14px 20px; cursor: pointer;
+    font: inherit; color: inherit;
+  }
+  .ac:hover, .ac:focus-visible { background: #f2eee5; outline: none; }
+  .ac:focus-visible { box-shadow: inset 3px 0 0 var(--gold); }
+  .ac .tail { font: 600 18px/1.2 Lora, Georgia, serif; }
+  .ac .state { font-size: 13px; margin-top: 2px; }
+  .ac .state.airborne { color: var(--navy); }
+  .ac .state.unknown, .ac .state.last_seen { color: var(--muted); }
+  .ac .detail { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .ac[disabled] { cursor: default; }
+  .tail-label {
+    background: var(--navy); color: #fff; border: 1px solid var(--gold);
+    font: 500 12px Poppins, sans-serif; padding: 2px 6px; box-shadow: none;
+  }
+  .tail-label::before { display: none; }
+  .dest-label { background: #fff; color: var(--navy); border: 1px solid var(--navy);
+    font: 500 11px Poppins, sans-serif; box-shadow: none; }
+  .legend { background: rgba(255,255,255,.92); padding: 8px 10px; font-size: 12px;
+    border: 1px solid var(--line); line-height: 1.7; }
+  .legend i { display: inline-block; width: 22px; height: 0; vertical-align: middle;
+    margin-right: 6px; border-top: 3px solid var(--gold); }
+  .legend i.dash { border-top: 2px dashed var(--navy); }
+  @media (max-width: 720px) {
+    body { grid-template: "head" auto "map" 58vh "list" 1fr / 1fr; }
+    #list { border-right: 0; border-top: 1px solid var(--line);
+      padding-bottom: env(safe-area-inset-bottom, 0px); }
+    header { flex-direction: column; gap: 4px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Jet7 <span>fleet</span></h1>
+  <p id="updated"></p>
+</header>
+<nav id="list" aria-label="Aircraft"></nav>
+<div id="map" role="region" aria-label="Fleet map"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+const FLEET = __FLEET_DATA__;
+
+document.getElementById("updated").textContent =
+  "Live ADS-B positions, updated " + FLEET.updated;
+
+const map = L.map("map", { worldCopyJump: true, zoomControl: true });
+L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+  maxZoom: 18,
+  attribution: '&copy; OpenStreetMap contributors &copy; CARTO | Positions: OpenSky Network'
+}).addTo(map);
+
+function planeIcon(heading, ground) {
+  const fill = ground ? "#7b8591" : "#2C3F54";
+  return L.divIcon({
+    className: "", iconSize: [30, 30], iconAnchor: [15, 15],
+    html: `<svg width="30" height="30" viewBox="0 0 24 24" style="transform:rotate(${heading || 0}deg)">
+      <path d="M12 2c.8 0 1.3.9 1.3 2v5.2l7.7 4.5v2l-7.7-2.4v4.5l2.2 1.7v1.5L12 20l-3.5 1v-1.5l2.2-1.7v-4.5L3 15.7v-2l7.7-4.5V4c0-1.1.5-2 1.3-2z"
+        fill="${fill}" stroke="#BCA67B" stroke-width="1"/></svg>`
+  });
+}
+
+const bounds = [];
+const list = document.getElementById("list");
+
+const order = { airborne: 0, on_ground: 1, last_seen: 2, unknown: 3 };
+FLEET.aircraft.sort((a, b) => order[a.status] - order[b.status]);
+const at = ap => (ap.km > 3 ? "near " : "at ") + ap.code;
+
+for (const a of FLEET.aircraft) {
+  const btn = document.createElement("button");
+  btn.className = "ac";
+  let state, lines = [];
+  if (a.status === "airborne") {
+    state = a.origin ? `In the air, departed ${a.origin.code}` : "In the air";
+    const alt = a.alt_ft != null ? a.alt_ft.toLocaleString() : "–";
+    lines.push(`${alt} ft, ${a.speed_kt ?? "–"} kt${a.departed ? ", took off " + a.departed : ""}`);
+  } else if (a.status === "on_ground") {
+    state = `On the ground ${at(a.airport)}`;
+    lines.push(a.airport.name);
+  } else if (a.status === "last_seen") {
+    state = a.was_airborne ? `Out of coverage, last seen in the air near ${a.airport.code}`
+                           : `Parked ${at(a.airport)}`;
+    lines.push(`${a.airport.name}, last signal ${a.seen}`);
+  } else {
+    state = "No recent data";
+  }
+  const mappable = a.lat != null;
+  if (!mappable) btn.disabled = true;
+  btn.innerHTML = `<div class="tail">${a.tail}</div>
+    <div class="state ${a.status}">${state}</div>
+    ${lines.map(l => `<div class="detail">${l}</div>`).join("")}`;
+  list.appendChild(btn);
+  if (!mappable) continue;
+
+  const group = L.layerGroup().addTo(map);
+  const pos = [a.lat, a.lon];
+  bounds.push(pos);
+  const flying = a.status === "airborne";
+
+  if (flying && a.track.length > 1) {
+    L.polyline(a.track, { color: "#BCA67B", weight: 3 }).addTo(group);
+    L.circleMarker(a.track[0], { radius: 4, color: "#2C3F54", fillColor: "#fff",
+      fillOpacity: 1, weight: 2 }).bindTooltip(`${a.tail} departed ${a.origin ? a.origin.code : ""}`).addTo(group);
+  }
+  // Parked aircraft at the same airport get nudged apart so labels don't stack.
+  const same = FLEET.aircraft.filter(b => b.status !== "airborne" && b.airport && a.airport && b.airport.code === a.airport.code);
+  const k = same.indexOf(a);
+  const shown = (!flying && same.length > 1)
+    ? [a.lat + 0.08 * Math.cos(k * 2 * Math.PI / same.length), a.lon + 0.1 * Math.sin(k * 2 * Math.PI / same.length)]
+    : pos;
+  L.marker(shown, { icon: planeIcon(flying ? a.heading : 0, !flying) })
+    .bindTooltip(a.tail, { permanent: true, direction: "top", offset: [0, -14], className: "tail-label" })
+    .addTo(group);
+  btn.addEventListener("click", () => map.setView(pos, flying ? 7 : 10));
+}
+
+if (bounds.length) map.fitBounds(bounds, { padding: [50, 50], maxZoom: 8 });
+else map.setView([33.0, -80.0], 5);
+
+const legend = L.control({ position: "bottomleft" });
+legend.onAdd = () => {
+  const d = L.DomUtil.create("div", "legend");
+  d.innerHTML = '<div><i></i>Flown track</div>';
+  return d;
+};
+legend.addTo(map);
+</script>
+</body>
+</html>
