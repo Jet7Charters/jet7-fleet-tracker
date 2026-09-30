@@ -1,5 +1,5 @@
 {
- "updated": "Wed Sep 30, 10:20 AM EDT",
+ "updated": "Wed Sep 30, 11:21 AM EDT",
  "aircraft": [
   {
    "tail": "N936AM",
@@ -38,19 +38,76 @@
   {
    "tail": "N577XW",
    "icao24": "a76a8c",
-   "status": "last_seen",
-   "track": [],
-   "lat": 33.9504,
-   "lon": -82.554,
-   "airport": {
-    "code": "US-6988",
-    "name": "New Prater Ranch Airport",
-    "lat": 33.8681,
-    "lon": -82.4608,
-    "km": 12.6
+   "status": "airborne",
+   "track": [
+    [
+     31.2557,
+     -81.4154
+    ],
+    [
+     31.2592,
+     -81.4191
+    ],
+    [
+     31.2727,
+     -81.4417
+    ],
+    [
+     31.2808,
+     -81.4545
+    ],
+    [
+     31.2893,
+     -81.4658
+    ],
+    [
+     31.2966,
+     -81.474
+    ],
+    [
+     31.3188,
+     -81.4982
+    ],
+    [
+     31.3266,
+     -81.5082
+    ],
+    [
+     31.3556,
+     -81.5498
+    ],
+    [
+     31.3616,
+     -81.56
+    ],
+    [
+     31.3681,
+     -81.5745
+    ],
+    [
+     31.4214,
+     -81.7133
+    ],
+    [
+     31.4278,
+     -81.7301
+    ]
+   ],
+   "last_contact": 1790781698,
+   "lon": -81.7332,
+   "lat": 31.429,
+   "alt_ft": 10125,
+   "on_ground": false,
+   "speed_kt": 309,
+   "heading": 293.83,
+   "origin": {
+    "code": "BQK",
+    "name": "Brunswick Golden Isles Airport",
+    "lat": 31.2588,
+    "lon": -81.4665,
+    "km": 4.9
    },
-   "seen": "Tue 5:16 PM",
-   "was_airborne": true
+   "departed": "Wed 11:17 AM"
   },
   {
    "tail": "N560PA",
