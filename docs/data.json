@@ -1,5 +1,5 @@
 {
- "updated": "Thu Oct 1, 9:17 PM EDT",
+ "updated": "Thu Oct 1, 10:16 PM EDT",
  "aircraft": [
   {
    "tail": "N936AM",
@@ -571,17 +571,37 @@
      -79.148
     ],
     [
-     36.8155,
-     -80.6111
+     36.5923,
+     -80.9118
+    ],
+    [
+     35.2568,
+     -82.6581
+    ],
+    [
+     33.875,
+     -84.3739
+    ],
+    [
+     32.8309,
+     -85.6178
+    ],
+    [
+     31.5154,
+     -87.354
+    ],
+    [
+     31.446,
+     -87.4433
     ]
    ],
-   "last_contact": 1790903853,
-   "lon": -80.5927,
-   "lat": 36.829,
-   "alt_ft": 42950,
+   "last_contact": 1790907409,
+   "lon": -87.4301,
+   "lat": 31.4563,
+   "alt_ft": 42975,
    "on_ground": false,
-   "speed_kt": 461,
-   "heading": 227.55,
+   "speed_kt": 479,
+   "heading": 227.71,
    "origin": {
     "code": "AVP",
     "name": "Wilkes-Barre/Scranton International Airport",
