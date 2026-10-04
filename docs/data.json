@@ -1,5 +1,5 @@
 {
- "updated": "Sun Oct 4, 1:11 AM EDT",
+ "updated": "Sun Oct 4, 7:32 AM EDT",
  "aircraft": [
   {
    "tail": "N936AM",
@@ -55,84 +55,19 @@
   {
    "tail": "N560PA",
    "icao24": "a72830",
-   "status": "airborne",
-   "track": [
-    [
-     33.0059,
-     -79.8523
-    ],
-    [
-     33.0112,
-     -79.8587
-    ],
-    [
-     33.4804,
-     -80.4556
-    ],
-    [
-     33.4891,
-     -80.4675
-    ],
-    [
-     33.5045,
-     -80.4902
-    ],
-    [
-     33.5078,
-     -80.4953
-    ],
-    [
-     33.51,
-     -80.4992
-    ],
-    [
-     33.5126,
-     -80.505
-    ],
-    [
-     33.5147,
-     -80.5107
-    ],
-    [
-     33.5164,
-     -80.5161
-    ],
-    [
-     33.5194,
-     -80.5261
-    ],
-    [
-     33.5647,
-     -80.6873
-    ],
-    [
-     33.5917,
-     -80.782
-    ],
-    [
-     33.6229,
-     -80.8915
-    ],
-    [
-     33.6348,
-     -80.9335
-    ]
-   ],
-   "last_contact": 1791090713,
-   "lon": -80.928,
+   "status": "last_seen",
+   "track": [],
    "lat": 33.6332,
-   "alt_ft": 4550,
-   "on_ground": false,
-   "speed_kt": 250,
-   "heading": 288.87,
-   "origin": {
-    "code": "LRO",
-    "name": "Mount Pleasant Regional Airport Faison Field",
-    "lat": 32.8978,
-    "lon": -79.7829,
-    "km": 13.7
+   "lon": -80.928,
+   "airport": {
+    "code": "SC90",
+    "name": "Do-Little Field",
+    "lat": 33.676,
+    "lon": -80.9474,
+    "km": 5.1
    },
-   "departed": "Sun 12:57 AM"
+   "seen": "Sun 1:11 AM",
+   "was_airborne": true
   },
   {
    "tail": "N560WV",
