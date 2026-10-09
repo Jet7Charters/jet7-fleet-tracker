@@ -1,25 +1,22 @@
 {
- "updated": "Thu Oct 8, 11:18 PM EDT",
+ "updated": "Fri Oct 9, 12:19 AM EDT",
  "aircraft": [
   {
    "tail": "N936AM",
    "icao24": "acfbff",
-   "status": "on_ground",
+   "status": "last_seen",
    "track": [],
-   "last_contact": 1791515906,
-   "lon": -122.384,
    "lat": 37.6251,
-   "alt_ft": null,
-   "on_ground": true,
-   "speed_kt": 12,
-   "heading": 354.38,
+   "lon": -122.384,
    "airport": {
     "code": "SFO",
     "name": "San Francisco International Airport",
     "lat": 37.6198,
     "lon": -122.3748,
     "km": 1.0
-   }
+   },
+   "seen": "Thu 11:18 PM",
+   "was_airborne": false
   },
   {
    "tail": "N511AB",
