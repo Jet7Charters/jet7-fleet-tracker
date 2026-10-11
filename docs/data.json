@@ -1,5 +1,5 @@
 {
- "updated": "Sun Oct 11, 9:17 AM EDT",
+ "updated": "Sun Oct 11, 10:16 AM EDT",
  "aircraft": [
   {
    "tail": "N936AM",
@@ -38,19 +38,22 @@
   {
    "tail": "N577XW",
    "icao24": "a76a8c",
-   "status": "last_seen",
+   "status": "on_ground",
    "track": [],
-   "lat": 36.5528,
-   "lon": -79.5339,
+   "last_contact": 1791727935,
+   "lon": -79.9565,
+   "lat": 40.776,
+   "alt_ft": null,
+   "on_ground": true,
+   "speed_kt": 12,
+   "heading": 250.31,
    "airport": {
-    "code": "38NC",
-    "name": "BHH Aviation Airport",
-    "lat": 36.476,
-    "lon": -79.5954,
-    "km": 10.2
-   },
-   "seen": "Sun 8:21 AM",
-   "was_airborne": true
+    "code": "BTP",
+    "name": "Pittsburgh/Butler Regional Airport",
+    "lat": 40.7769,
+    "lon": -79.9497,
+    "km": 0.6
+   }
   },
   {
    "tail": "N560PA",
