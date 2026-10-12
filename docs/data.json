@@ -1,5 +1,5 @@
 {
- "updated": "Mon Oct 12, 6:20 AM EDT",
+ "updated": "Mon Oct 12, 7:20 AM EDT",
  "aircraft": [
   {
    "tail": "N936AM",
@@ -38,19 +38,48 @@
   {
    "tail": "N577XW",
    "icao24": "a76a8c",
-   "status": "last_seen",
-   "track": [],
-   "lat": 35.8176,
-   "lon": -86.3524,
-   "airport": {
-    "code": "MBT",
-    "name": "City of Murfreesboro Airport",
-    "lat": 35.8775,
-    "lon": -86.3775,
-    "km": 7.0
+   "status": "airborne",
+   "track": [
+    [
+     36.1424,
+     -86.6771
+    ],
+    [
+     36.147,
+     -86.6755
+    ],
+    [
+     36.1519,
+     -86.6731
+    ],
+    [
+     36.1562,
+     -86.6697
+    ],
+    [
+     36.1591,
+     -86.6662
+    ],
+    [
+     36.1625,
+     -86.6607
+    ]
+   ],
+   "last_contact": 1791803980,
+   "lon": -86.6751,
+   "lat": 36.148,
+   "alt_ft": 1150,
+   "on_ground": false,
+   "speed_kt": 176,
+   "heading": 18.54,
+   "origin": {
+    "code": "BNA",
+    "name": "Nashville International Airport",
+    "lat": 36.1245,
+    "lon": -86.6782,
+    "km": 2.0
    },
-   "seen": "Mon 2:27 AM",
-   "was_airborne": true
+   "departed": "Mon 7:19 AM"
   },
   {
    "tail": "N560PA",
