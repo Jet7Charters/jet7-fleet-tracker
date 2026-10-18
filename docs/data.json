@@ -1,5 +1,5 @@
 {
- "updated": "Sun Oct 18, 5:22 PM EDT",
+ "updated": "Sun Oct 18, 6:22 PM EDT",
  "aircraft": [
   {
    "tail": "N936AM",
@@ -55,68 +55,19 @@
   {
    "tail": "N560PA",
    "icao24": "a72830",
-   "status": "airborne",
-   "track": [
-    [
-     33.6275,
-     -83.0617
-    ],
-    [
-     33.6308,
-     -83.0545
-    ],
-    [
-     33.6407,
-     -83.0338
-    ],
-    [
-     33.6512,
-     -83.0122
-    ],
-    [
-     33.6658,
-     -82.9838
-    ],
-    [
-     33.6753,
-     -82.9642
-    ],
-    [
-     33.6951,
-     -82.9199
-    ],
-    [
-     33.6994,
-     -82.9079
-    ],
-    [
-     33.7011,
-     -82.8949
-    ],
-    [
-     33.7014,
-     -82.8807
-    ],
-    [
-     33.7045,
-     -82.4161
-    ]
-   ],
-   "last_contact": 1792358567,
-   "lon": -82.4212,
+   "status": "last_seen",
+   "track": [],
    "lat": 33.7044,
-   "alt_ft": 9550,
-   "on_ground": false,
-   "speed_kt": 288,
-   "heading": 89.2,
-   "origin": {
-    "code": "CPP",
-    "name": "Greene County Regional Airport",
-    "lat": 33.598,
-    "lon": -83.1382,
-    "km": 7.8
+   "lon": -82.4212,
+   "airport": {
+    "code": "3GE8",
+    "name": "Prater Ranch Airport",
+    "lat": 33.8436,
+    "lon": -82.4788,
+    "km": 16.4
    },
-   "departed": "Sun 5:15 PM"
+   "seen": "Sun 5:22 PM",
+   "was_airborne": true
   },
   {
    "tail": "N560WV",
