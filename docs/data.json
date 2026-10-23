@@ -1,5 +1,5 @@
 {
- "updated": "Fri Oct 23, 1:28 PM EDT",
+ "updated": "Fri Oct 23, 2:31 PM EDT",
  "aircraft": [
   {
    "tail": "N936AM",
@@ -106,60 +106,19 @@
   {
    "tail": "N156RE",
    "icao24": "a0e1f5",
-   "status": "airborne",
-   "track": [
-    [
-     32.917,
-     -80.0443
-    ],
-    [
-     32.9446,
-     -80.0392
-    ],
-    [
-     32.963,
-     -80.035
-    ],
-    [
-     32.9775,
-     -80.0305
-    ],
-    [
-     32.9885,
-     -80.0195
-    ],
-    [
-     32.9989,
-     -80.004
-    ],
-    [
-     33.0055,
-     -79.9934
-    ],
-    [
-     33.0304,
-     -79.9502
-    ],
-    [
-     33.0517,
-     -79.9109
-    ]
-   ],
-   "last_contact": 1792776405,
-   "lon": -79.9109,
+   "status": "last_seen",
+   "track": [],
    "lat": 33.0517,
-   "alt_ft": 2725,
-   "on_ground": false,
-   "speed_kt": 238,
-   "heading": 57.71,
-   "origin": {
-    "code": "CHS",
-    "name": "Charleston International Airport",
-    "lat": 32.8962,
-    "lon": -80.0382,
-    "km": 2.4
+   "lon": -79.9109,
+   "airport": {
+    "code": "SC98",
+    "name": "Mount Holly Airport",
+    "lat": 33.0543,
+    "lon": -80.0834,
+    "km": 16.1
    },
-   "departed": "Fri 1:23 PM"
+   "seen": "Fri 1:26 PM",
+   "was_airborne": true
   }
  ]
 }
