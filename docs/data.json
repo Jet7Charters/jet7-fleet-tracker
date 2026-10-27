@@ -1,25 +1,22 @@
 {
- "updated": "Mon Oct 26, 9:40 PM EDT",
+ "updated": "Mon Oct 26, 10:29 PM EDT",
  "aircraft": [
   {
    "tail": "N936AM",
    "icao24": "acfbff",
-   "status": "on_ground",
+   "status": "last_seen",
    "track": [],
-   "last_contact": 1793065211,
-   "lon": -90.264,
    "lat": 29.9949,
-   "alt_ft": null,
-   "on_ground": true,
-   "speed_kt": 10,
-   "heading": 28.12,
+   "lon": -90.264,
    "airport": {
     "code": "MSY",
     "name": "Louis Armstrong New Orleans International Airport",
     "lat": 29.9934,
     "lon": -90.2647,
     "km": 0.2
-   }
+   },
+   "seen": "Mon 9:40 PM",
+   "was_airborne": false
   },
   {
    "tail": "N511AB",
