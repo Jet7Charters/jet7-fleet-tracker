@@ -1,5 +1,5 @@
 {
- "updated": "Thu Oct 29, 10:54 AM EDT",
+ "updated": "Thu Oct 29, 11:49 AM EDT",
  "aircraft": [
   {
    "tail": "N936AM",
@@ -231,17 +231,33 @@
      -85.4721
     ],
     [
-     41.9206,
-     -86.2979
+     41.4038,
+     -87.2972
+    ],
+    [
+     40.4469,
+     -89.0651
+    ],
+    [
+     39.4743,
+     -90.7662
+    ],
+    [
+     38.5002,
+     -92.3813
+    ],
+    [
+     38.3353,
+     -92.6472
     ]
    ],
-   "last_contact": 1793285676,
-   "lon": -86.318,
-   "lat": 41.9102,
+   "last_contact": 1793288974,
+   "lon": -92.6414,
+   "lat": 38.3388,
    "alt_ft": 42975,
    "on_ground": false,
-   "speed_kt": 407,
-   "heading": 235.41,
+   "speed_kt": 378,
+   "heading": 231.55,
    "origin": {
     "code": "PTK",
     "name": "Oakland County International Airport",
