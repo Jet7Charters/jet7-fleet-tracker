@@ -1,5 +1,5 @@
 {
- "updated": "Thu Oct 29, 3:46 PM EDT",
+ "updated": "Thu Oct 29, 4:39 PM EDT",
  "aircraft": [
   {
    "tail": "N936AM",
@@ -106,19 +106,64 @@
   {
    "tail": "N156RE",
    "icao24": "a0e1f5",
-   "status": "last_seen",
-   "track": [],
-   "lat": 33.7398,
-   "lon": -80.7545,
-   "airport": {
-    "code": "99SC",
-    "name": "St. Mathews Airport",
-    "lat": 33.6892,
-    "lon": -80.6886,
-    "km": 8.3
+   "status": "airborne",
+   "track": [
+    [
+     33.8674,
+     -81.0852
+    ],
+    [
+     33.8537,
+     -81.0832
+    ],
+    [
+     33.8424,
+     -81.0813
+    ],
+    [
+     33.828,
+     -81.0788
+    ],
+    [
+     33.8159,
+     -81.078
+    ],
+    [
+     33.8027,
+     -81.0805
+    ],
+    [
+     33.7898,
+     -81.0876
+    ],
+    [
+     33.7794,
+     -81.0979
+    ],
+    [
+     33.771,
+     -81.1117
+    ],
+    [
+     33.7661,
+     -81.128
+    ]
+   ],
+   "last_contact": 1793306373,
+   "lon": -81.136,
+   "lat": 33.7651,
+   "alt_ft": 8450,
+   "on_ground": false,
+   "speed_kt": 289,
+   "heading": 263.05,
+   "origin": {
+    "code": "CAE",
+    "name": "Columbia Metropolitan Airport",
+    "lat": 33.9382,
+    "lon": -81.123,
+    "km": 8.6
    },
-   "seen": "Mon 3:39 PM",
-   "was_airborne": true
+   "departed": "Thu 4:37 PM"
   }
  ]
 }
