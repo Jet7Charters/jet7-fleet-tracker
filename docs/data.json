@@ -1,5 +1,5 @@
 {
- "updated": "Sat Oct 31, 11:14 AM EDT",
+ "updated": "Sat Oct 31, 3:51 PM EDT",
  "aircraft": [
   {
    "tail": "N936AM",
@@ -55,36 +55,19 @@
   {
    "tail": "N560PA",
    "icao24": "a72830",
-   "status": "airborne",
-   "track": [
-    [
-     33.3846,
-     -79.3586
-    ],
-    [
-     33.3819,
-     -79.3667
-    ],
-    [
-     33.3762,
-     -79.3848
-    ]
-   ],
-   "last_contact": 1793459644,
-   "lon": -79.3848,
+   "status": "last_seen",
+   "track": [],
    "lat": 33.3762,
-   "alt_ft": 12975,
-   "on_ground": false,
-   "speed_kt": 324,
-   "heading": 249.94,
-   "origin": {
+   "lon": -79.3848,
+   "airport": {
     "code": "GGE",
     "name": "Georgetown County Airport",
     "lat": 33.3117,
     "lon": -79.3196,
-    "km": 8.9
+    "km": 9.4
    },
-   "departed": "Sat 11:13 AM"
+   "seen": "Sat 11:14 AM",
+   "was_airborne": true
   },
   {
    "tail": "N560WV",
