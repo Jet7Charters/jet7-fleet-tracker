@@ -1,5 +1,5 @@
 {
- "updated": "Sun Nov 8, 9:57 AM EST",
+ "updated": "Sun Nov 8, 2:29 PM EST",
  "aircraft": [
   {
    "tail": "N936AM",
@@ -106,19 +106,22 @@
   {
    "tail": "N156RE",
    "icao24": "a0e1f5",
-   "status": "last_seen",
+   "status": "on_ground",
    "track": [],
-   "lat": 33.7651,
-   "lon": -81.136,
+   "last_contact": 1794166175,
+   "lon": -81.3407,
+   "lat": 28.5463,
+   "alt_ft": null,
+   "on_ground": true,
+   "speed_kt": 12,
+   "heading": 275.62,
    "airport": {
-    "code": "2SC8",
-    "name": "Gaston Airport",
-    "lat": 33.7858,
-    "lon": -81.0921,
-    "km": 4.7
-   },
-   "seen": "Thu 4:39 PM",
-   "was_airborne": true
+    "code": "ORL",
+    "name": "Orlando Executive Airport",
+    "lat": 28.5455,
+    "lon": -81.3329,
+    "km": 0.8
+   }
   }
  ]
 }
