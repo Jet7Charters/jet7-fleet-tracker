@@ -1,5 +1,5 @@
 {
- "updated": "Wed Nov 25, 5:19 PM EST",
+ "updated": "Wed Nov 25, 11:51 PM EST",
  "aircraft": [
   {
    "tail": "N936AM",
@@ -72,32 +72,19 @@
   {
    "tail": "N560WV",
    "icao24": "a728f2",
-   "status": "airborne",
-   "track": [
-    [
-     28.545,
-     -81.3335
-    ],
-    [
-     28.546,
-     -81.3309
-    ]
-   ],
-   "last_contact": 1795645193,
-   "lon": -81.3309,
+   "status": "last_seen",
+   "track": [],
    "lat": 28.546,
-   "alt_ft": 225,
-   "on_ground": false,
-   "speed_kt": 105,
-   "heading": 67.09,
-   "origin": {
+   "lon": -81.3309,
+   "airport": {
     "code": "ORL",
     "name": "Orlando Executive Airport",
     "lat": 28.5455,
     "lon": -81.3329,
-    "km": 0.1
+    "km": 0.2
    },
-   "departed": "Wed 5:19 PM"
+   "seen": "Wed 5:19 PM",
+   "was_airborne": true
   },
   {
    "tail": "N50XY",
